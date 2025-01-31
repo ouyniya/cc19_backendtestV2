@@ -1,37 +1,62 @@
-exports.listProducts = (req, res) => {
+const createError = require('../utils/createError')
+
+
+exports.listProducts = (req, res, next) => {
     // code
     // throw new Error('Easy handle error')
-    const error = new Error("Email is required")
-    error.statusCode = 400
-    throw error
-    
-    res.json({
-        message: "Hello Controller List Products"
-    })
+    try {
+        if (true) {
+            return createError(400, "Password is wrong")
+        }
+        res.json({
+            message: "Hello Controller List Products"
+        })
+    } catch (error) {
+        next(error)
+    }
 }
 
 exports.readProducts = (req, res) => {
-    console.log("Hello, GET products")
-    res.json({
-        message: "Hello, GET products ID"
-    })
+    try {
+        console.log("Hello, GET products")
+        res.json({
+            message: "Hello, GET products ID"
+        })
+    } catch (error) {
+        next(error)
+    }
 }
 
 exports.createProducts = (req, res) => {
-    res.json({
-        message: "Hello, post products ID"
-    })
+    try {
+        console.log("Hello, GET products")
+        res.json({
+            message: "Hello, post products ID"
+        })
+    } catch (error) {
+        next(error)
+    }
 }
 
 exports.updateProducts = (req, res) => {
-    res.json({
-        message: "Hello, put products ID"
-    })
+    try {
+        res.json({
+            message: "Hello, put products ID"
+        })
+    } catch (error) {
+        next(error)
+    }
 }
 
 exports.deleteProducts = (req, res) => {
-    res.json({
-        message: "Hello, delete products ID"
-    })
+    try {
+ 
+        res.json({
+            message: "Hello, delete products ID"
+        })
+    } catch (error) {
+        next(error)
+    }
+
 }
 
